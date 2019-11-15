@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for file in *.sql
+do
+    iconv -f UTF-16LE -t UTF-8 "$file" >> "$file.new" &&
+    mv -f "$file.new" "$file"
+done
